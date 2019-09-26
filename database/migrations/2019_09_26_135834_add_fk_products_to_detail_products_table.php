@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddFkProductsToDetailProducts extends Migration
+class AddFkProductsToDetailProductsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -14,7 +14,6 @@ class AddFkProductsToDetailProducts extends Migration
     public function up()
     {
         Schema::table('products', function (Blueprint $table) {
-            //
             $table->foreign('detail_id')
                 ->references('id')->on('detailProducts')
                 ->onDelete('cascade');

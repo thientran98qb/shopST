@@ -19,7 +19,8 @@ class UsersTableSeeder extends Seeder
                 'gender' =>'nam',
                 'phone'=>'0123456789',
                 'address'=>'Da Nang',
-                'note'=>''
+                'note'=>'',
+                'role_id'=>'1'
             ],
             [
                 'name' => 'Tran Thi B',
@@ -28,7 +29,8 @@ class UsersTableSeeder extends Seeder
                 'password' => bcrypt('123456'),
                 'phone'=>'01489546',
                 'address'=>'Quang Nam',
-                'note'=>''
+                'note'=>'',
+                'role_id'=>'2'
             ]
         ];
 

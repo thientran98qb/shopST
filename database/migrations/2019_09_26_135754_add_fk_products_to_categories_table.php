@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddFkRolesToUsersTable extends Migration
+class AddFkProductsToCategoriesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,9 @@ class AddFkRolesToUsersTable extends Migration
      */
     public function up()
     {
-        Schema::table('roles', function (Blueprint $table) {
-            $table->foreign('user_id')
-                ->references('id')->on('users')
+        Schema::table('products', function (Blueprint $table) {
+            $table->foreign('category_id')
+                ->references('id')->on('categories')
                 ->onDelete('cascade');
         });
     }
@@ -27,7 +27,7 @@ class AddFkRolesToUsersTable extends Migration
      */
     public function down()
     {
-        Schema::table('roles', function (Blueprint $table) {
+        Schema::table('products', function (Blueprint $table) {
             //
         });
     }

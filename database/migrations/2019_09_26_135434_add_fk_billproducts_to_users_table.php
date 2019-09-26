@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddFkBillsProductsToThreetable extends Migration
+class AddFkBillproductsToUsersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -18,13 +18,12 @@ class AddFkBillsProductsToThreetable extends Migration
                 ->references('id')->on('users')
                 ->onDelete('cascade');
 
-            $table->foreign('product_id')
-                ->references('id')->on('products')
-                ->onDelete('cascade');
             $table->foreign('bill_id')
                 ->references('id')->on('bills')
                 ->onDelete('cascade');
-            //
+            $table->foreign('product_id')
+                ->references('id')->on('products')
+                ->onDelete('cascade');
         });
     }
 
@@ -35,7 +34,7 @@ class AddFkBillsProductsToThreetable extends Migration
      */
     public function down()
     {
-        Schema::table('bills_products', function (Blueprint $table) {
+        Schema::table('billProducts', function (Blueprint $table) {
             //
         });
     }
