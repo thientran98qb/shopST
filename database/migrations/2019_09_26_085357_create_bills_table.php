@@ -19,6 +19,7 @@ class CreateBillsTable extends Migration
             $table->double('total');
             $table->string('payment');
             $table->string('note');
+            $table->unsignedBigInteger('user_id');
             $table->timestamps();
         });
     }

@@ -16,7 +16,7 @@ class CreateBillsProductsTable extends Migration
         Schema::create('billProducts', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('bill_id');
-            $table->unsignedBigInteger('user_id');
+
             $table->unsignedBigInteger('product_id');
             $table->integer('quantity');
             $table->double('unit_price');

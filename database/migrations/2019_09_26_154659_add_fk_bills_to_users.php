@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddFkBillproductsToUsersTable extends Migration
+class AddFkBillsToUsers extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,9 @@ class AddFkBillproductsToUsersTable extends Migration
      */
     public function up()
     {
-        Schema::table('billProducts', function (Blueprint $table) {
-
-
-            $table->foreign('bill_id')
-                ->references('id')->on('bills')
-                ->onDelete('cascade');
-            $table->foreign('product_id')
-                ->references('id')->on('products')
+        Schema::table('bills', function (Blueprint $table) {
+            $table->foreign('user_id')
+                ->references('id')->on('users')
                 ->onDelete('cascade');
         });
     }
@@ -32,7 +27,7 @@ class AddFkBillproductsToUsersTable extends Migration
      */
     public function down()
     {
-        Schema::table('billProducts', function (Blueprint $table) {
+        Schema::table('bills', function (Blueprint $table) {
             //
         });
     }
