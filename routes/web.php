@@ -14,6 +14,9 @@
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/home', 'HomeController@getIndex')->name('home');
+Route::get('/lsp', 'HomeController@getloaiSP')->name('loaisp');
+Route::get('/detailsp', 'HomeController@getdetailSP')->name('detailsp');
 
 Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'as' => 'admin-'], function () {
     // show form login if not login yet
@@ -47,3 +50,4 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'as' => 'admin-'], fu
 
     });
 });
+
