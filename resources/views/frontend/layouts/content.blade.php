@@ -19,11 +19,7 @@
 <body>
 @include('frontend.layouts.header')
 
-
-
-    @yield('content')
-
-
+@yield('content')
 
 @include('frontend.layouts.footer')
 

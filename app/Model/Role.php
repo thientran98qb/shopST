@@ -8,6 +8,6 @@ class Role extends Model
 {
     public function Users()
     {
-        return $this->hasMany('App\User','role_id','id');
+        return $this->hasMany('App\Model\User','role_id','id');
     }
 }
