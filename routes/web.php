@@ -15,9 +15,20 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::get('/home', 'HomeController@getIndex')->name('home');
-Route::get('/lsp', 'HomeController@getloaiSP')->name('loaisp');
-Route::get('/detailsp', 'HomeController@getdetailSP')->name('detailsp');
-
+Route::get('/lsp/{id}', 'HomeController@getloaiSP')->name('lsp');
+Route::get('/detailsp/{id}', 'HomeController@getdetailSP')->name('detailsp');
+Route::get('/about', 'HomeController@about')->name('about');
+Route::get('/contact', 'HomeController@contact')->name('contact');
+Route::get('/add-to-cart/{id}','HomeController@getAddtoCart')->name('add-to-cart');
+Route::get('del-cart/{id}','HomeController@getDelItemCart')->name('del-cart');
+Route::get('order','HomeController@getCheckout')->name('order');
+Route::post('order','HomeController@postCheckout')->name('order');
+Route::get('login','HomeController@getLogin')->name('login');
+Route::post('login','HomeController@postLogin')->name('login');
+Route::get('register','HomeController@getRegister')->name('register');
+Route::post('register','HomeController@postRegister')->name('register');
+Route::get('logout','HomeController@getLogout')->name('logout');
+Route::get('search','HomeController@getSearch')->name('search');
 Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'as' => 'admin-'], function () {
     // show form login if not login yet
     Route::get('login', 'LoginController@login')->name('login');
