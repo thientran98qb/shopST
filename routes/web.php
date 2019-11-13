@@ -47,6 +47,26 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'as' => 'admin-'], fu
             Route::post('/delete/{id}', 'UserController@destroy')->name('delete');
         });
 
+        Route::group(['prefix' => 'product', 'as' => 'product-'], function () {
+            Route::get('/', 'ProductController@index')->name('index');
+            Route::get('/add', 'ProductController@create')->name('add');
+            Route::post('/add', 'ProductController@store')->name('add');
+            Route::get('/edit/{id}', 'ProductController@edit')->name('edit');
+            Route::post('/edit/{id}', 'ProductController@update')->name('edit');
+            Route::get('/detail/{id}', 'ProductController@show')->name('detail');
+            Route::post('/delete/{id}', 'ProductController@destroy')->name('delete');
+        });
+
+        Route::group(['prefix' => 'bill', 'as' => 'bill-'], function () {
+            Route::get('/', 'BillContronller@index')->name('index');
+            Route::get('/add', 'BillContronller@create')->name('add');
+            Route::post('/add', 'BillContronller@store')->name('add');
+            Route::get('/edit/{id}', 'BillContronller@edit')->name('edit');
+            Route::post('/edit/{id}', 'BillContronller@update')->name('edit');
+            Route::get('/detail/{id}', 'BillContronller@show')->name('detail');
+            Route::post('/delete/{id}', 'BillContronller@destroy')->name('delete');
+        });
+
 
     });
 });
