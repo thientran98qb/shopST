@@ -2,7 +2,6 @@
 
 use Illuminate\Database\Seeder;
 
-
 class ProductsTableSeeder extends Seeder
 {
     /**
@@ -118,7 +117,7 @@ class ProductsTableSeeder extends Seeder
                 'description'=>'',
                 'unit_price'=>'175000',
                 'promotion_price'=>'25000',
-                'image'=>'24.jpg',
+                'image'=>'11.jpg',
                 'unit'=>'cai',
                 'category_id'=>'2',
                 'detail_id'=>'2'
@@ -158,7 +157,7 @@ class ProductsTableSeeder extends Seeder
                 'description'=>'',
                 'unit_price'=>'450000',
                 'promotion_price'=>'0',
-                'image'=>'15.png',
+                'image'=>'15.jpg',
                 'unit'=>'cai',
                 'category_id'=>'3',
                 'detail_id'=>'3'
@@ -208,7 +207,7 @@ class ProductsTableSeeder extends Seeder
                 'description'=>'',
                 'unit_price'=>'230000',
                 'promotion_price'=>'0',
-                'image'=>'20.jpg',
+                'image'=>'20.png',
                 'unit'=>'cai',
                 'category_id'=>'4',
                 'detail_id'=>'4'
@@ -218,7 +217,7 @@ class ProductsTableSeeder extends Seeder
                 'description'=>'',
                 'unit_price'=>'300000',
                 'promotion_price'=>'50000',
-                'image'=>'21.jpg',
+                'image'=>'21.png',
                 'unit'=>'cai',
                 'category_id'=>'4',
                 'detail_id'=>'4'

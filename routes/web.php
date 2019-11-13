@@ -15,20 +15,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::get('/home', 'HomeController@getIndex')->name('home');
-Route::get('/lsp/{id}', 'HomeController@getloaiSP')->name('lsp');
-Route::get('/detailsp/{id}', 'HomeController@getdetailSP')->name('detailsp');
-Route::get('/about', 'HomeController@about')->name('about');
-Route::get('/contact', 'HomeController@contact')->name('contact');
-Route::get('/add-to-cart/{id}','HomeController@getAddtoCart')->name('add-to-cart');
-Route::get('del-cart/{id}','HomeController@getDelItemCart')->name('del-cart');
-Route::get('order','HomeController@getCheckout')->name('order');
-Route::post('order','HomeController@postCheckout')->name('order');
-Route::get('login','HomeController@getLogin')->name('login');
-Route::post('login','HomeController@postLogin')->name('login');
-Route::get('register','HomeController@getRegister')->name('register');
-Route::post('register','HomeController@postRegister')->name('register');
-Route::get('logout','HomeController@getLogout')->name('logout');
-Route::get('search','HomeController@getSearch')->name('search');
+Route::get('/lsp', 'HomeController@getloaiSP')->name('loaisp');
+Route::get('/detailsp', 'HomeController@getdetailSP')->name('detailsp');
+
 Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'as' => 'admin-'], function () {
     // show form login if not login yet
     Route::get('login', 'LoginController@login')->name('login');
@@ -56,6 +45,26 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'as' => 'admin-'], fu
             Route::post('/edit/{id}', 'UserController@update')->name('edit');
             Route::get('/detail/{id}', 'UserController@show')->name('detail');
             Route::post('/delete/{id}', 'UserController@destroy')->name('delete');
+        });
+
+        Route::group(['prefix' => 'product', 'as' => 'product-'], function () {
+            Route::get('/', 'ProductController@index')->name('index');
+            Route::get('/add', 'ProductController@create')->name('add');
+            Route::post('/add', 'ProductController@store')->name('add');
+            Route::get('/edit/{id}', 'ProductController@edit')->name('edit');
+            Route::post('/edit/{id}', 'ProductController@update')->name('edit');
+            Route::get('/detail/{id}', 'ProductController@show')->name('detail');
+            Route::post('/delete/{id}', 'ProductController@destroy')->name('delete');
+        });
+
+        Route::group(['prefix' => 'bill', 'as' => 'bill-'], function () {
+            Route::get('/', 'BillContronller@index')->name('index');
+            Route::get('/add', 'BillContronller@create')->name('add');
+            Route::post('/add', 'BillContronller@store')->name('add');
+            Route::get('/edit/{id}', 'BillContronller@edit')->name('edit');
+            Route::post('/edit/{id}', 'BillContronller@update')->name('edit');
+            Route::get('/detail/{id}', 'BillContronller@show')->name('detail');
+            Route::post('/delete/{id}', 'BillContronller@destroy')->name('delete');
         });
 
 

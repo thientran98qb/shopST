@@ -7,5 +7,5 @@ use App\Http\Controllers\Controller;
 
 class BillController extends Controller
 {
-    // code cua e day
+    //
 }

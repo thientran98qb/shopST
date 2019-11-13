@@ -1,10 +1,8 @@
 <?php
 
-namespace App\Model;
+namespace App;
 
-use Illuminate\Database\Eloquent\Model;
-
-class Cart extends Model
+class Cart
 {
 	public $items = null;
 	public $totalQty = 0;
@@ -29,13 +27,8 @@ class Cart extends Model
 		$giohang['price'] = $item->unit_price * $giohang['qty'];
 		$this->items[$id] = $giohang;
 		$this->totalQty++;
-		if ($item->promotion_price>0){
-            $this->totalPrice += ($item->unit_price-$item->promotion_price);
-        }else{
-            $this->totalPrice += $item->unit_price;
-        }
+		$this->totalPrice += $item->unit_price;
 	}
-
 	//xóa 1
 	public function reduceByOne($id){
 		$this->items[$id]['qty']--;
