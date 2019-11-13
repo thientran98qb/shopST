@@ -6,7 +6,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Bill extends Model
 {
-    protected $table="bills";
     public function user(){
         return $this->belongsTo('App\Model\User','user_id','id');
     }
